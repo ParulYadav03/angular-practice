@@ -1,0 +1,36 @@
+<style>
+   .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: gray;
+    width: 500px;
+   } 
+   .content{
+    height: 500px;
+    background-color: lightgreen;
+   }
+   .active{
+    font-weight: bold;
+    color: red;
+   }
+</style>
+
+
+<div class="nav">
+  <div class="home">
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}" routerLink=""  >home</a>
+  </div>
+  <div class="about">
+    <a  routerLinkActive="active" routerLink="/about">about</a>
+  </div>
+  <div class="product">
+    <a  routerLinkActive="active" routerLink="/products">product</a>
+  </div>
+</div>
+
+
+<div class="content">
+ <router-outlet></router-outlet>
+</div>

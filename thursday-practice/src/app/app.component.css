@@ -1,0 +1,19 @@
+.parent-box{
+    background: wheat;
+    border: 1px solid black;
+    padding:15px;
+    border-radius: 5px;
+   
+    margin: 20px;
+
+    
+}
+
+.parent-box h2{
+    margin-top: 0px;
+    color: brown;
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,19 @@
+.row{
+ display: flex;
+    width: 50%;
+}
+
+.child{
+    background-color: palevioletred;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.btn{
+    margin: 5px 55px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: peachpuff;
+    color: brown;
+}

@@ -1,0 +1,54 @@
+<h1>thrusday practice</h1>
+<h4>parent-component</h4>
+<div class="row">
+  <div class="col parent-box">
+    <h2>user</h2>
+    
+    <table >
+        <tr>
+          <th>user-name</th>
+          <th>remove</th>
+        </tr>
+        <tr *ngFor = "let user of users ; index as i">
+          <td>{{user}}</td>
+          <td>
+            <button (click)="remove(i)">remove</button>
+          </td>
+
+        </tr>
+    </table>
+  </div>
+
+
+  <!--admin block-->
+
+  <div class="col parent-box">
+    <h2>Admin</h2>
+    
+    <table >
+        <tr>
+          <th>Admin-name</th>
+          <th>remove</th>
+        </tr>
+        <tr *ngFor = "let admin of admins ; index as i">
+          <td>{{admin}}</td>
+          <td>
+            <button (click)="removeadmin(i)">remove-admin</button>
+          </td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<h4>child-component</h4>
+<div class="row">
+
+     <app-child-component
+
+         (inputEvent)="pushusers($event)"
+          [count]="countt" (countDecrease)="handleDecrease()"
+          ></app-child-component>
+
+          <app-child-component></app-child-component>
+
+</div>

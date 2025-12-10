@@ -1,0 +1,58 @@
+<!-- forms in angular
+    there are two types of forms in angular
+    1.reactive form
+    setup of form model : explict , created in component class 
+    Data model : structured and immutable 
+    Data flow : synchronous 
+    Form validation : functions
+    2. template driven form
+    setup of form model : Implicit , created by directives
+    Data model : unstructured and mutable
+    Data flow : Asynchronus
+    Form  validation : Directives
+-->
+<!--  
+<h1>basic react forms</h1>
+<form action="" method="post">
+    <input type="text" placeholder="enter Name" [formControl]="name">
+    <br>
+    <br>
+    <input type="text" placeholder="enter password" [formControl]="password">
+    <br><br>
+    <button type="button" (click)="displayvalue()">
+         login
+    </button>
+    <h2>{{name.value}}</h2>
+    <h2>{{password.value}}</h2>
+</form>
+-->
+
+<!-- 
+form  grouping in reactive forms
+1 . why we use?
+   -> organization and readability
+   -> validation and error handling
+   -> Accessing Group Values
+-->
+
+<h1>form grouping i reactive forms</h1>
+
+<form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="enter name" formControlName="name">
+  <span *ngIf="profileForm.get('name')?.hasError('required')">*</span>
+  <br><br>
+  <input type="text" placeholder="enter password" formControlName="password" >
+  <span *ngIf="profileForm.get('password') ?.hasError('required')">Password is Required</span>
+  <span *ngIf="profileForm.get('password')?.invalid && (profileForm.get('password')?.dirty || profileForm.get('password')?.touched)">please provide password</span>
+  <br><br>
+  <input type="text" placeholder="enter email" formControlName="email" >
+  <br><br>
+  <button>submit</button>
+   <button (click)="setValues()">set-values</button>
+</form>
+
+<h4>{{this.profileForm.value.name}}</h4>
+<h4>{{this.profileForm.value.password}}</h4>
+<h4>{{this.profileForm.value.email}}</h4>
+
+

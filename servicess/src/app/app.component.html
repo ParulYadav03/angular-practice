@@ -1,0 +1,9 @@
+services practice
+
+<button (click)="getclothedata()">click me to show the clothes</button>
+
+<ul>
+  <li *ngFor="let clothes of getclothes">
+    {{clothes.name}} - {{clothes.brand}} - {{clothes.price}} 
+  </li>
+</ul>

@@ -1,0 +1,19 @@
+<p>eventbind works!</p>
+
+<button (click)="onaddcart($event)">Add to cart</button>
+<br><br>
+
+
+<button value="laptop" (click)="onaddcart($event)">laptop</button>
+<button value="mobile" (click)="onaddcart($event)">mobile</button>
+<button value="washing  machine" (click)="onaddcart($event)">washing machine</button>
+
+<p>{{msg}}</p>
+
+<input type="text" value="myinputtext" (click)="onInputClick($event)">
+
+<br>
+<hr>
+
+<input #InputInfo type="text" value="uxtrends" name="anup">
+<button (click)="getInputInfo(InputInfo)">getinfo</button>

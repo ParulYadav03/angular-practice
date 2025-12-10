@@ -1,0 +1,19 @@
+<p>home works!</p>
+<a routerLink="about">go to products</a>
+<router-outlet></router-outlet>
+<br><br><br>
+ <input type="text" #username placeholder="enter your name"/>
+ <button (click)="add(username.value)">add-user</button>
+ <br><br><br>
+<table [border]="1" [cellPadding]="4" [cellSpacing]="4">
+    <tr>
+        <th>username</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor = "let user of users , index as i">
+    <td>{{user}}</td>
+    <td>
+        <button (click)="del(i)">remove</button>
+    </td>
+    </tr>
+</table>

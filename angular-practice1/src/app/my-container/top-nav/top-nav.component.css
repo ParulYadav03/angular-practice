@@ -1,0 +1,31 @@
+.top-nav{
+    width: 789px;
+    background-color: rgb(107, 107, 209);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding:5px ;
+}
+.main{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.toplinks{
+    display: flex;
+    gap: 20px;
+}
+.toplinks a{
+    color: white;
+    text-decoration: none;
+    
+}
+.toplinks a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.class1{
+    font-weight: bold;
+    font-size: 20px;
+    
+}

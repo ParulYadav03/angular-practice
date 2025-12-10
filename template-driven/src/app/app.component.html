@@ -1,0 +1,18 @@
+<h1>template-driven-form</h1>
+
+<form #userForm = "ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input #name = "ngModel" type="text" placeholder="enter name" name = "name" ngModel required>
+  <span *ngIf="name.invalid && name.touched">*</span>
+  <br><br>
+  <input type="password" placeholder="enter password" #password ="ngModel"name="password"  ngModel required>
+  <br><br>
+  <select name="gender"  ngModel required>
+    <option value="">select gender</option>
+    <option value="male">male</option>
+    <option value="female">female</option>
+  </select>
+  <br><br>
+  <input type="range" min="0" max="20" name="range"  ngModel required>
+  <br><br>
+  <button [disabled]="userForm.invalid">Add user</button>
+</form>

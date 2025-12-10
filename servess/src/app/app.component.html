@@ -1,0 +1,8 @@
+<h1>services</h1>
+
+<button (click)="getproductdata()">load productdata</button>
+
+
+<ul *ngFor="let data of productdata">
+  <li>{{data.branch}} - {{data.name}} - {{data.price}}</li>
+</ul>

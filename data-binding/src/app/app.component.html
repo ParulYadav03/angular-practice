@@ -1,0 +1,112 @@
+string interpolateion example
+
+
+<h1>{{hello}}</h1>
+
+property binding example <br>
+
+<input type="text" [disabled]="isdisabled" placeholder="hello">
+
+<br>
+event binding example <br>
+
+<button (click)="message()">click me</button>
+
+two way data binding example <br>
+<input type="text" [(ngModel)]="hello">
+<p>you typed : {{hello}}</p>
+
+<!--
+
+list rendring + event binding example <br> <br>
+ <input type = "text "  #username> 
+ <button (click)="add(username.value)">add-user</button>
+<br><br>
+
+<table border="1" [cellPadding]="4" [cellSpacing]="4">
+  <tr>
+    <th>uername</th>
+    <th>action</th>
+  </tr>
+    <tr *ngFor =  "let user of users , index as i">
+     <td>{{user}}</td>
+     <td><button (click)="delete(i)">remove</button></td>
+    </tr>
+</table>
+
+<br>
+<br><br>
+<div class="main">
+  <select [(ngModel)]="color">
+    <option value="default">please select color</option>
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+  </select>
+</div>
+<div class="content" [ngSwitch]="color">
+  <div *ngSwitchDefault>please select a color</div>
+  <div *ngSwitchCase="'red'">you selected red</div>
+  <div *ngSwitchCase="'green'">you selected green</div>
+  <div *ngSwitchCase="'blue'">you selected blue</div>
+</div>
+
+<br>
+<br>
+<div class="nav">
+  <button (click)="page = 'home'">Home</button>
+  <button (click)="page = 'products'">Products</button>
+  <button (click)="page = 'contact'">Contact</button>
+</div>
+
+<div class="content" [ngSwitch]="page">
+
+  <div *ngSwitchCase="'home'">
+    <h2>Welcome Home</h2>
+    <p>This is the home section.</p>
+  </div>
+
+  <div *ngSwitchCase="'products'">
+    <h2>Products</h2>
+    <ul>
+      <li>Product A</li>
+      <li>Product B</li>
+      <li>Product C</li>
+    </ul>
+  </div>
+
+  <div *ngSwitchCase="'contact'">
+    <h2>Contact Us</h2>
+    <p>Email: info@example.com</p>
+    <p>Phone: +123 456 7890</p>
+  </div>
+
+  <div *ngSwitchDefault>
+    <p>Please select a page.</p>
+  </div>
+
+</div>
+  -->
+<br>
+<br>
+<h3> @input @output</h3>
+<br><br>
+<h4>pass data to child component</h4>
+<app-user [user] = "name"></app-user>
+
+
+<select #user (change)="onuserchange(user.value)">
+  <option value="Peter">Peter</option>
+  <option value="sam">sam</option>
+  <option value="Anil sidhu">Anil sidhu</option>
+</select>
+
+<br><br>
+
+<h4>pass data to the parent component</h4>
+<app-parent (getusers)="userhandle($event)"></app-parent>
+
+
+<div *ngFor="let user of users">
+  {{user}}
+</div>

@@ -1,0 +1,113 @@
+<h3>template refernce</h3>
+
+<input  #inputinfo type="text" value="uxtrrends" name="Anup">
+<button (click)="getinputinfo(inputinfo)">get info</button>
+
+<!--event bind ka syntax hai circle means "()"
+  and property binding ka syntax hai square brackets []
+  two-way binding ka syntax hai [()]
+  for two binding it is important to import formsmodume in your app.ts file
+  and ngModel is pre directive of angular-->
+
+  <h3>two-way binding</h3>
+
+  <input type="text" value="uxtrends" [(ngModel)] = "name">
+  <p>{{name}}</p>
+
+  <!--directives in angular basically a instruction which is used to behaviour and appearance of DOM
+  component is also a directive 
+  there are a three types of directives
+  1: components directives 
+  Directives with own components
+  (component is a directive with a template)
+  2: structural directive 
+  Manipulating the DOM elements
+  ->ngif
+  :-> syntax for ngif is *ngif
+  ->ngfor : used for loop in angular and we used it to display a list of items
+  :-> syntax for ngfor is *ngfor="let item of items; index as i"
+  ->ngswitch : used to display one element from a set of elements based on a condition
+  :-> syntax for ngswitch is [ngswitch]="expression"
+  3:Attribute Directives
+  Changes the look and behaviour of the DOM
+  ->ngstyle
+  ->ngclass
+
+
+  note : for get the value of event use $event keyword and Pass it to a function
+  example : (change)="getProductval($event)"
+   in ts file you can get the value by using ($event.target as HTMLInputElement).value
+  -->
+
+  <h3>directives in angular</h3>
+  <p>ngif , then and else  directive</p>
+  <div class="container">
+    <button style="background-color: green; border-radius: 5px;border: none;"(click)="showdiv()">create Block</button>
+    <br>
+    <div *ngIf="isvalid  then thenblock  else elseblock"></div>
+    <ng-template #thenblock>
+      <div>block is created</div>
+    </ng-template>
+    <ng-template #elseblock>
+      <div>no block is created</div>
+    </ng-template>
+  </div>
+
+
+  <h3>ng-switch</h3>
+  <div class="container">
+    <select (change)="getProductval($event)">
+      <option value="Default">Select Product</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Mobile">Mobile</option>
+      <option value="TV">TV</option>
+      <option value="Washing-Machine">Washing-Machine</option>
+    </select>
+  </div>
+  <div class="content" [ngSwitch]="selectedPrducts">
+    <h3 *ngSwitchDefault>Please select the Product</h3>
+    <h3 *ngSwitchCase="'Laptop'">Laptop</h3>
+    <h3 *ngSwitchCase="'Mobile'">Mobile</h3>
+    <h3 *ngSwitchCase="'TV'">TV</h3>
+    <h3 *ngSwitchCase="'Washing-Machine'">Washing-Machine</h3>
+  </div>
+
+  <h3>ngfor directive</h3>
+
+  <div class="main">
+    <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+          <th>product-id</th>
+          <th>product-name</th>
+          <th>product-price</th>
+      </tr>
+      <tr *ngFor="let myproduct of products">
+          <th>{{myproduct.id}}</th>
+          <th>{{myproduct.name}}</th>
+          <th>{{myproduct.price}}</th>
+      </tr>
+</table>
+  </div>
+
+
+  <h4>push and splice method</h4>
+   <div class="inputbox">
+    <input type="text" #uname placeholder="enter your name">
+
+    <button style="background-color: green; border: none;" (click)="createuser(uname)">Create user</button>
+   </div>
+    <br><br>
+   <div class="div">
+    <table border="1" [cellPadding]="4" [cellSpacing]="4">
+      <tr>
+        <th>user name</th>
+        <th>remove</th>
+      </tr>
+      <tr *ngFor="let users of users ; index as i">
+        <td>{{users.name}}</td>
+        <td>
+          <button style="background-color: red;"(click)="removeitem(i)">delete</button>
+        </td>
+      </tr>
+    </table>
+   </div>

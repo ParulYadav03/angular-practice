@@ -1,0 +1,60 @@
+<style>
+.main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 150px);
+        gap: 10px;
+
+       
+    }
+.main div{
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: small;
+         margin: 10px;
+    }
+    
+</style>
+
+
+<div class="main">
+    <div class="1">
+        <app-common>
+            <div class="title">laptop</div>
+            <div class="button">
+            <button style="background-color: red; border: none;">buy-now</button>
+            </div> 
+        </app-common>
+    </div>
+
+     <div class="1">
+        <app-common>
+            <div class="title">mobile</div>
+            <div class="button">
+            <button style="background-color: green; border: none;">buy-now</button>
+            </div>
+        </app-common>
+    </div>
+
+     <div class="1">
+        <app-common>
+            <div class="title">washing-machine</div>
+             <div class="button">
+            <button style="background-color:yellow; border: none;">buy-now</button>
+            </div>
+        </app-common>
+    </div>
+
+     <div class="1">
+        <app-common>
+            <div class="title">tv</div>
+            <div class="button">
+            <button style="background-color: pink; border: none;">buy-now</button>
+            </div>
+        </app-common>
+    </div>
+
+</div>
